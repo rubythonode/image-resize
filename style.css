@@ -1,6 +1,6 @@
 *, *:before, *:after {box-sizing: border-box;}
 
-body {margin: 0;}
+body {margin: 0; -webkit-text-size-adjust: none;}
 main {padding: 0; font-family: sans-serif; max-width: 1000px; margin: 0 auto;}
 main > h1 {
 	margin: 0; padding: 20px 0 0;
@@ -18,6 +18,10 @@ main > h1 {
 	color: #fff; font-size: 14px; font-weight: 600;
 }
 
+@media all and (max-width: 640px) {
+	.form {padding: 20px 15px;}
+}
+
 
 /* field */
 .field-item {
@@ -26,15 +30,25 @@ main > h1 {
 }
 .field-item:first-child {border-top-width: 1px;}
 .field-item-full {flex: 1;}
-.field-item strong {width: 80px; padding: 0 0 0 0; font-size: 14px; color: #333;}
+.field-item > strong {width: 80px; padding: 0; font-size: 14px; color: #333;}
+.field-item > div {flex: 1;}
 .field-item p {margin: 8px 0 0; font-size: 12px; color: #666;}
-.field-item__label {
-	margin-left: 10px;
-}
+.field-item__label {margin-left: 10px;}
 .field-item__label:first-child {margin-left: 0;}
 .field-item__label > * {display: inline-block; vertical-align: middle;}
 .field-item__label > span {margin: 2px 4px 0 0; font-size: 14px;}
 
+@media all and (max-width: 640px) {
+	.field-item {display: flex;}
+	.field-item > strong {width: 70px;}
+	.field-item__label {display: block; margin: 5px 0 0;}
+	.field-item__label:first-child {margin-top: 0;}
+	.field-item__label > * {}
+	.field-item__label > span {}
+}
+
+
+/* input form */
 .input-text {
 	margin: 0; padding: 8px 10px;
 	border: 1px solid #ddd;
